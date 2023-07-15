@@ -115,7 +115,7 @@ enum Color {
          // set TFT to command-receive mode
          pins.digitalWritePin(DigitalPin.P1, 0)
          // select TFT controller
-         pins.digitalWritePin(DigitalPin.P16, 0)
+         pins.digitalWritePin(DigitalPin.P12, 0)
          // Send command
          pins.spiWrite(command)
 
@@ -127,7 +127,7 @@ enum Color {
          }
 
          // deselect TFT controller
-         pins.digitalWritePin(DigitalPin.P16, 1)
+         pins.digitalWritePin(DigitalPin.P12, 1)
      }
 
      /*
@@ -145,7 +145,7 @@ enum Color {
          // Activate command mode
          pins.digitalWritePin(DigitalPin.P1, 0)
          // select TFT as SPI-target
-         pins.digitalWritePin(DigitalPin.P16, 0)
+         pins.digitalWritePin(DigitalPin.P12, 0)
          pins.spiWrite(TFTCommands.RAMWR)
          // Activate data mode
          pins.digitalWritePin(DigitalPin.P1, 1)
@@ -155,7 +155,7 @@ enum Color {
       * Finish data-mode and set back to command-mode
       */
      function exitDataMode(): void {
-         pins.digitalWritePin(DigitalPin.P16, 1) // de-elect the TFT as SPI target
+         pins.digitalWritePin(DigitalPin.P12, 1) // de-elect the TFT as SPI target
          pins.digitalWritePin(DigitalPin.P1, 0) // command/data = command
      }
 
