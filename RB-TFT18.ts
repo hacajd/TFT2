@@ -148,7 +148,7 @@ enum Color {
          pins.digitalWritePin(DigitalPin.P16, 0)
          pins.spiWrite(TFTCommands.RAMWR)
          // Activate data mode
-         pins.digitalWritePin(DigitalPin.P1, 1)
+         pins.digitalWritePin(DigitalPin.P12, 1)
      }
 
      /*
